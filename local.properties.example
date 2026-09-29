@@ -1,0 +1,25 @@
+# Copy this file to local.properties and fill in your values.
+# local.properties is git-ignored: never commit real credentials.
+
+# Android SDK location (Android Studio usually writes this for you).
+sdk.dir=/absolute/path/to/Android/sdk
+
+# --- Agora project (https://console.agora.io) ---
+# App ID from your Agora project.
+AGORA_APP_ID=
+# RTC token. Leave empty if your App Certificate is disabled (recommended for development).
+AGORA_RTC_TOKEN=
+# Customer key/secret (Console -> API REST -> Customer Secret). Used to call the
+# Conversational AI REST API. WARNING: these are secret credentials — for anything
+# beyond local experimentation they should live on a backend, not in the app.
+AGORA_CUSTOMER_KEY=
+AGORA_CUSTOMER_SECRET=
+
+# --- Conversational AI agent ---
+# Comma-separated presets configure ASR/LLM/TTS without any extra API keys.
+# Leave empty to use the explicit LLM settings below instead.
+CONVOAI_PRESET=deepgram_nova_3,openai_gpt_5_mini,minimax_speech_2_6_turbo
+# Used only when CONVOAI_PRESET is empty: an OpenAI-compatible chat endpoint.
+CONVOAI_LLM_URL=
+CONVOAI_LLM_MODEL=
+CONVOAI_LLM_API_KEY=
