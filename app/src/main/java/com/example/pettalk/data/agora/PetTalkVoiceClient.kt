@@ -3,6 +3,7 @@ package com.example.pettalk.data.agora
 import android.content.Context
 import android.util.Log
 import com.example.pettalk.data.model.SessionStatus
+import io.agora.rtc2.ChannelMediaOptions
 import io.agora.rtc2.Constants
 import io.agora.rtc2.IRtcEngineEventHandler
 import io.agora.rtc2.RtcEngine
@@ -135,7 +136,13 @@ class PetTalkVoiceClient(
         engine.enableAudioVolumeIndication(200, 3, true)
         engine.disableVideo()
         engine.setEnableSpeakerphone(true)
-        engine.joinChannel(config.rtcToken, channel, "", uid)
+        val options = ChannelMediaOptions().apply {
+            channelProfile = Constants.CHANNEL_PROFILE_LIVE_BROADCASTING
+            clientRoleType = Constants.CLIENT_ROLE_BROADCASTER
+            publishMicrophoneTrack = true
+            autoSubscribeAudio = true
+        }
+        engine.joinChannel(config.rtcToken, channel, uid, options)
     }
 
     private suspend fun setupRtm(channel: String, uid: String) {

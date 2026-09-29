@@ -63,7 +63,7 @@ class VoiceSessionViewModel @Inject constructor(
             try {
                 // A fresh channel per session keeps agent UID collisions away.
                 val channel = "demo-channel"
-                val uid = 1001
+                val uid = 1002
                 voiceClient.start(channel, uid)
                 agentId = agentClient.startAgent(channel, uid, petType)
             } catch (e: Exception) {

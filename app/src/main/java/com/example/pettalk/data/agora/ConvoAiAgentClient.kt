@@ -77,6 +77,13 @@ class ConvoAiAgentClient(private val config: AgoraConfig) {
                     putJsonObject("asr") {
                         put("language", "en-US")
                     }
+                    putJsonObject("tts") {
+                        putJsonObject("params") {
+                            putJsonObject("voice_setting") {
+                                put("voice_id", "English_captivating_female1")
+                            }
+                        }
+                    }
                     putJsonObject("parameters") {
                         put("data_channel", "rtm")
                         put("enable_error_message", true)
