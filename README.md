@@ -81,6 +81,13 @@ app/src/main/java/com/example/pettalk/
     └── screens/                             # PetSelectionScreen, VoiceSessionScreen
 ```
 
+## Screenshots
+
+Pet Selection  | Conversation
+--- | ---
+![Pet Selection](pet_selection.png) | ![Conversation](conversation.png)
+
+
 ## Owner
 
 Anuj Sinha, hackathon project.
